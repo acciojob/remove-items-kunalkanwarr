@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style type="text/css"> 
-			body {margin: 30px;} 
-		</style>  
-		<meta charset=utf-8 /> 
-		<title>Remove items from a dropdown list</title>
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Color</title>
+    <style>
+        /* Basic styling for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+        input[type="button"] {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
-	<body>
-		<form> 
-			<select id="colorSelect"> 
-				<option>Red</option> 
-				<option>Green</option> 
-				<option>White</option> 
-				<option>Black</option> 
-			</select> 
-			<input type="button" value="Select and Remove"> 
-		</form>
+<select id="colorSelect">
+    <option value="Red">Red</option>
+    <option value="Green">Green</option>
+    <option value="White">White</option>
+    <option value="Black">Black</option>
+</select>
 
-		<script type="text/javascript" src="./script.js">
-		</script>
+<input type="button" value="Select and Remove" onclick="removeSelectedColor()">
 
-	</body>
+<script>
+    function removeSelectedColor() {
+        const colorSelect = document.getElementById('colorSelect');
+        const selectedIndex = colorSelect.selectedIndex;
 
+        if (selectedIndex !== -1) {
+            colorSelect.remove(selectedIndex);
+        }
+    }
+</script>
+
+</body>
 </html>
